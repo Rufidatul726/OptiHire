@@ -24,6 +24,9 @@ app.post('/upload', upload.single('pdf'), async (req, res) => {
 
     const text = data.text;
 
+    /* ###############We will work though this "text"####################### */
+    console.log(text)
+
     // Tokenization
     const tokenizer = new natural.WordTokenizer();
     const tokens = tokenizer.tokenize(text);
@@ -39,7 +42,7 @@ app.post('/upload', upload.single('pdf'), async (req, res) => {
     // Text Normalization
     const normalizedTokens = stemmedTokens.map(token => token.toLowerCase());
 
-    console.log(normalizedTokens);
+    // console.log(normalizedTokens);
     res.json({ text: text, tokens: normalizedTokens });
   } catch (err) {
     console.error(err);
