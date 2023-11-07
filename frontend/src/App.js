@@ -7,6 +7,7 @@ import Dashboard from './components/Dashboard';
 import ForgotPassword from './components/ForgotPassword';
 import ResetPassword from './components/ResetPassword';
 import { Layout } from 'antd';
+import RequirementForm from './components/RequirementForm';
 
 const { Header, Footer, Sider, Content } = Layout;
 
@@ -29,6 +30,7 @@ function App() {
         <Route path="/dashboard/*" element={<Dashboard />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password" element={<ResetPassword />} />
+        <Route path="/req-form" element={<RequirementForm />} />
       </Routes>
 
       <div className="nav-buttons-container">

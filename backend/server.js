@@ -8,7 +8,7 @@ const { getInformationFromPDF } = require('./pdf_reader');
 const app = express();
 const port = 9000;
 const userRoutes= require("./user/userRoutes");
-const url= "mongodb+srv://classproject:classproject@optihire.hew1xqe.mongodb.net/?retryWrites=true&w=majority";
+const url= process.env.MONGO_URI || "mongodb://localhost:27017/ResumeParser";
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
