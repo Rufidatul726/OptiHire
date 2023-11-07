@@ -4,6 +4,7 @@
 
 import { Grid } from 'antd';
 import React, { useState } from 'react';
+import './Requirement.css';
 
 const RequirementForm = () => {
   const [experienceYears, setExperienceYears] = useState('');
@@ -61,93 +62,47 @@ const RequirementForm = () => {
   };
 
   return (
-    <div className="container">
-        <form onSubmit={handleSubmit}>
-            <div className='form-control flex flex-row'>
-                <div className='col'>
-                    <label htmlFor="experienceYears">Experience Years:</label>
-                    <input
-                        type="text"
-                        id="experienceYears"
-                        value={experienceYears}
-                        onChange={handleExperienceChange}
-                    />
-                </div>
-                <div className='col'>
-                    <label htmlFor="maxCandidates">Max Number of Shortlist Candidates:</label>
-                    <input
-                        type="number"
-                        id="maxCandidates"
-                        value={maxCandidates}
-                        onChange={handleMaxCandidatesChange}
-                    />
-                </div>
-            </div> 
-            <div className='form-control row'>
-                <label>Required Languages:</label>
-                <div>
-                    <label>
-                    {languages.map((language) => (
-                        <div key={language.id}>
-                        <input
-                            type="checkbox"
-                            value={language.name}
-                            onChange={handleLanguageChange}
-                        />
-                        {language.name}
-                        </div>
-                    ))}
-                    </label>
-                </div>
-            </div>
-            <button type="submit">Submit</button>   
-        </form> 
+    <div className="rcontainer">
+      <form onSubmit={handleSubmit}>
+        <div className='form-control'>
+          <div className='col'>
+            <label htmlFor="experienceYears">Experience Years:</label>
+            <input
+              type="text"
+              id="experienceYears"
+              value={experienceYears}
+              onChange={handleExperienceChange}
+            />
+          </div>
+          <div className='col'>
+            <label htmlFor="maxCandidates">Max Number of Shortlist Candidates:</label>
+            <input
+              type="number"
+              id="maxCandidates"
+              value={maxCandidates}
+              onChange={handleMaxCandidatesChange}
+            />
+          </div>
+        </div>
+        <div className='form-control row'>
+          <label>Required Languages:</label>
+          <div className='scrollable-language-list'>
+            {languages.map((language) => (
+              <div key={language.id}>
+                <input
+                  type="checkbox"
+                  value={language.name}
+                  onChange={handleLanguageChange}
+                />
+                {language.name}
+              </div>
+            ))}
+          </div>
+        </div>
+        <button type="submit">Submit</button>
+      </form>
     </div>
   );
 };
 
 export default RequirementForm;
-
-/*<form onSubmit={handleSubmit}>
-        <div>
-          <label htmlFor="experienceYears">Experience Years:</label>
-          <input
-            type="text"
-            id="experienceYears"
-            value={experienceYears}
-            onChange={handleExperienceChange}
-          />
-        </div>
-
-        <div>
-          <label>Required Languages:</label>
-          <div>
-            <label>
-              {languages.map((language) => (
-                <div key={language.id}>
-                  <input
-                    type="checkbox"
-                    value={language.name}
-                    onChange={handleLanguageChange}
-                  />
-                  {language.name}
-                </div>
-              ))}
-            </label>
-          </div>
-         
-          /* Add more radio buttons for other languages as needed */
-        //   </div>
-
-        //   <div>
-        //     <label htmlFor="maxCandidates">Max Number of Shortlist Candidates:</label>
-        //     <input
-        //       type="number"
-        //       id="maxCandidates"
-        //       value={maxCandidates}
-        //       onChange={handleMaxCandidatesChange}
-        //     />
-        //   </div>
-  
-        //   <button type="submit">Submit</button>
-        // </form>

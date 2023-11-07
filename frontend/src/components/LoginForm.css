@@ -1,85 +1,69 @@
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  margin: 0;
-}
-
+/* LoginForm container styles */
 .form-container {
+  
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
   width: 100%;
   max-width: 400px;
-  padding: 20px;
-  background-color: rgba(53, 23, 0, 0.637);
-  border-radius: 8px;
-  border: 1px solid #6889ffbe;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.301);
+}
+
+/* Logo container styles */
+.logo-container {
   text-align: center;
-  animation: slideIn 0.5s ease-in-out;
-}
-
-@keyframes slideIn {
-  0% {
-      transform: translateY(50px);
-      opacity: 0;
-  }
-  100% {
-      transform: translateY(0);
-      opacity: 1;
-  }
-}
-
-.form-container h1 {
-  font-size: 24px;
   margin-bottom: 20px;
-  color: #007bffaa;
 }
 
-.form-container input {
+.logo-container img {
+  max-width: 100px;
+}
+
+/* Input field styles */
+input {
   width: 100%;
   padding: 10px;
-  margin: 7px; 
-  border: 1px solid #000000;
-  background-color: rgba(53, 23, 0, 0.553);
-  border-radius: 4px;
-  transition: border-color 0.3s ease-in-out;
-  box-sizing: border-box; 
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  height: 40px;
+  font-size: 16px;
 }
 
-.form-container input:focus {
-  border-color: #007bffb1;
-}
-
-.form-container a {
+/* "Forgot your password" link styles */
+a {
+  color: #007bff;
   text-decoration: none;
-  color: #ecf5ff;
   font-size: 14px;
   margin-top: 10px;
-  display: block;
-  transition: color 0.3s ease-in-out;
 }
 
-.form-container a:hover {
-  color: #ffff58;
+a:hover {
+  text-decoration: underline;
 }
 
+/* Sign In button styles */
 .button-19 {
-  background-color: #f763be;
+  background-color: #007bff;
   color: #fff;
   border: none;
   padding: 10px 20px;
-  border-radius: 4px;
+  border-radius: 5px;
   cursor: pointer;
   font-size: 16px;
   margin-top: 10px;
-  transition: background-color 0.3s ease-in-out;
 }
 
 .button-19:hover {
-  background-color: #f40398;
+  background-color: #0056b3;
 }
 
-.logo-container img{
-  width: 15%;
-  height: 15%;
+/* Responsive styles for smaller screens */
+@media (max-width: 768px) {
+  .form-container {
+    max-width: 90%;
+  }
 }

@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import RequirementForm from './RequirementForm';
+import './Dashboard.css';
 
 const Dashboard = () => {
   const [pdfFiles, setPdfFiles] = useState([]);
@@ -58,8 +60,9 @@ const Dashboard = () => {
   
 
   return (
-    <div>
-      <h1>Dashboard</h1>
+    <div className="dcontainer">
+      <h1>Dashboard</h1><br /><hr /><br />
+      <RequirementForm /><br /><hr /><br />
       <input
         type="file"
         webkitdirectory="true"
@@ -75,10 +78,10 @@ const Dashboard = () => {
         Upload PDFs
       </button>
 
-      {uploading && <p>Uploading...</p>}
+      {uploading && <p className="uploading-message">Uploading...</p>}
 
       {pdfFiles.length > 0 && (
-        <div>
+        <div className="pdf-files-list">
           <h2>PDF Files in the Selected Folder:</h2>
           <ul>
             {pdfFiles.map((file, index) => (

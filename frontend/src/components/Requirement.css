@@ -1,0 +1,72 @@
+.rcontainer {
+    width: 40%;
+    height: 45vh;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+  }
+  
+  .form-control {
+    margin-bottom: 15px;
+  }
+  
+  .form-control label {
+    display: block;
+    font-weight: bold;
+  }
+  
+  .col {
+    display: inline-block;
+    width: 48%; /* Adjust the width as needed */
+    margin-right: 2%;
+  }
+  
+  .row {
+    display: inline-block;
+    width: 100%;
+  }
+  
+  .row label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"],
+  input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  label {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .scrollable-language-list {
+    max-height: 150px; /* Adjust the height as needed */
+    overflow-y: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 5px 0;
+    align-items: left;
+  }
