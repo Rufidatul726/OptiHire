@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import RequirementForm from './RequirementForm';
 
 const Dashboard = () => {
   const [pdfFiles, setPdfFiles] = useState([]);
@@ -60,6 +61,7 @@ const Dashboard = () => {
   return (
     <div>
       <h1>Dashboard</h1>
+      <RequirementForm />
       <input
         type="file"
         webkitdirectory="true"
