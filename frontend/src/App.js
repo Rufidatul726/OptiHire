@@ -1,20 +1,64 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import './App.css';
-import PDFUploader from './components/PDFUploader';
+import { Routes, Route, Link, useLocation, useNavigate } from 'react-router-dom';
+import SignUpForm from './components/SignUpForm';
+import LoginForm from './components/LoginForm';
+import Dashboard from './components/Dashboard';
+import ForgotPassword from './components/ForgotPassword';
+import ResetPassword from './components/ResetPassword';
+import { Layout } from 'antd';
+
+const { Header, Footer, Sider, Content } = Layout;
 
 function App() {
-  const [text, setText] = useState('');
-
-  const handleTextUpdate = (parsedText) => {
-    setText(parsedText);
+  const location = useLocation();
+  const isLoggedIn = !!localStorage.getItem('token');
+  const navigate = useNavigate();
+  const handleLogout = () => {
+    localStorage.removeItem('token');
+    navigate('/login');
   };
 
+  const appClassName = isLoggedIn ? 'App logged-in' : 'App';
+
   return (
-    <div className="App">
-      <h1>PDF Parser</h1>
-      <PDFUploader onTextUpdate={handleTextUpdate} />
-      {text && <div className="parsed-text">{text}</div>}
-    </div>
+    <Layout className={appClassName}>
+      <Routes>
+        <Route path="/register" element={<SignUpForm />} />
+        <Route path="/login" element={<LoginForm />} />
+        <Route path="/dashboard/*" element={<Dashboard />} />
+        <Route path="/forgot-password" element={<ForgotPassword />} />
+        <Route path="/reset-password" element={<ResetPassword />} />
+      </Routes>
+
+      <div className="nav-buttons-container">
+        {isLoggedIn ? (
+          <div>
+            <button
+              className={`nav-button ${location.pathname === '/dashboard' ? 'active' : ''}`}
+            >
+              <Link to="/dashboard">Dashboard</Link>
+            </button>
+            <button className="nav-button" onClick={handleLogout}>
+              Logout
+            </button>
+          </div>
+        ) : (
+          <div>
+            <button
+              className={`nav-button ${location.pathname === '/register' ? 'active' : ''}`}
+            >
+              <a href="/register">Sign Up</a>
+            </button>
+            <button
+              className={`nav-button ${location.pathname === '/login' ? 'active' : ''}`}
+            >
+              <Link to="/login">Log In</Link>
+            </button>
+          </div>
+        )}
+      </div>
+    </Layout>
   );
 }
 

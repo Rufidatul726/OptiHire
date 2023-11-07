@@ -1,15 +1,32 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const multer = require('multer');
 const pdf = require('pdf-parse');
 const natural = require('natural');
 const cors = require('cors');
 const app = express();
-const port = 5000;
-
-// Set up storage for uploaded files
+const port = 9000;
+const userRoutes= require("./user/userRoutes");
+const url= "mongodb://127.0.0.1:27017/optiHire";
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
+mongoose.connect(url, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true
+})
+.then(() => {
+  console.log(`MongoDB Connected: ${mongoose.connection.host}`);
+  app.listen(port, function check(err) {
+    if (err)
+      console.log("error");
+    else
+      console.log("Server connected");
+  });
+})
+.catch((error) => {
+  console.log("Error connecting to MongoDB:", error);
+});
 app.use(express.json());
 app.use(cors());
 
@@ -50,3 +67,4 @@ app.post('/upload', upload.single('pdf'), async (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
+app.use(userRoutes);
