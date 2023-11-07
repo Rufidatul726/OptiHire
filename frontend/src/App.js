@@ -30,7 +30,7 @@ function App() {
         <Route path="/dashboard/*" element={<Dashboard />} />
         <Route path="/forgot-password" element={<ForgotPassword />} />
         <Route path="/reset-password" element={<ResetPassword />} />
-        <Route path="/req-form" element={<RequirementForm />} />
+        {/* <Route path="/req-form" element={<RequirementForm />} /> */}
       </Routes>
 
       <div className="nav-buttons-container">
