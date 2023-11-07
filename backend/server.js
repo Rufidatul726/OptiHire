@@ -3,6 +3,7 @@ const multer = require('multer');
 const pdf = require('pdf-parse');
 const natural = require('natural');
 const cors = require('cors');
+const { getInformationFromPDF } = require('./pdf_reader');
 const app = express();
 const port = 5000;
 
@@ -20,12 +21,13 @@ app.post('/upload', upload.single('pdf'), async (req, res) => {
     }
 
     const buffer = req.file.buffer;
+    getInformationFromPDF(buffer)
     const data = await pdf(buffer);
 
     const text = data.text;
 
     /* ###############We will work though this "text"####################### */
-    console.log(text)
+    // console.log(text)
 
     // Tokenization
     const tokenizer = new natural.WordTokenizer();
