@@ -7,8 +7,8 @@ const cors = require('cors');
 const { getInformationFromPDF } = require('./pdf_reader');
 const app = express();
 const port = 9000;
-const userRoutes= require("./user/userRoutes");
-const url= "mongodb+srv://classproject:classproject@optihire.hew1xqe.mongodb.net/?retryWrites=true&w=majority";
+const userRoutes = require("./user/userRoutes");
+const url = "mongodb+srv://classproject:classproject@optihire.hew1xqe.mongodb.net/?retryWrites=true&w=majority";
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
@@ -16,12 +16,12 @@ mongoose.connect(url, {
   useNewUrlParser: true,
   useUnifiedTopology: true
 })
-.then(() => {
-  console.log(`MongoDB Connected: ${mongoose.connection.host}`);
-})
-.catch((error) => {
-  console.log("Error connecting to MongoDB:", error);
-});
+  .then(() => {
+    console.log(`MongoDB Connected: ${mongoose.connection.host}`);
+  })
+  .catch((error) => {
+    console.log("Error connecting to MongoDB:", error);
+  });
 app.use(express.json());
 app.use(cors());
 
@@ -32,13 +32,10 @@ app.post('/upload', upload.single('pdf'), async (req, res) => {
     }
 
     const buffer = req.file.buffer;
-    getInformationFromPDF(buffer)
+    getInformationFromPDF(buffer);
     const data = await pdf(buffer);
 
     const text = data.text;
-
-    /* ###############We will work though this "text"####################### */
-    // console.log(text)
 
     // Tokenization
     const tokenizer = new natural.WordTokenizer();
@@ -66,4 +63,4 @@ app.post('/upload', upload.single('pdf'), async (req, res) => {
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
-app.use(userRoutes);  
+app.use(userRoutes);
