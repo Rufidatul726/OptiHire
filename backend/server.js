@@ -4,6 +4,7 @@ const multer = require('multer');
 const pdf = require('pdf-parse');
 const natural = require('natural');
 const cors = require('cors');
+const { getInformationFromPDF } = require('./pdf_reader');
 const app = express();
 const port = 9000;
 const userRoutes= require("./user/userRoutes");
@@ -37,9 +38,13 @@ app.post('/upload', upload.single('pdf'), async (req, res) => {
     }
 
     const buffer = req.file.buffer;
+    getInformationFromPDF(buffer)
     const data = await pdf(buffer);
 
     const text = data.text;
+
+    /* ###############We will work though this "text"####################### */
+    // console.log(text)
 
     // Tokenization
     const tokenizer = new natural.WordTokenizer();
@@ -56,7 +61,7 @@ app.post('/upload', upload.single('pdf'), async (req, res) => {
     // Text Normalization
     const normalizedTokens = stemmedTokens.map(token => token.toLowerCase());
 
-    console.log(normalizedTokens);
+    // console.log(normalizedTokens);
     res.json({ text: text, tokens: normalizedTokens });
   } catch (err) {
     console.error(err);
