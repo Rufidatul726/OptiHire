@@ -35,8 +35,7 @@ async function getContactInfo(textDataArray) {
 async function getSkillsInfo(textDataArray) {
     let length = textDataArray.length
     let skillsInfo = [];
-    let = false;
-    foundSkills
+    let foundSkills = false;
     for (let i = 0; i < length && !(foundSkills == true && (textDataArray[i] == 'Languages' || textDataArray[i] == 'Certifications' || textDataArray[i] == 'Publications' || textDataArray[i] == 'Honors-Awards' || textDataArray[i] == 'Experience' || textDataArray[i] == 'Education')); i++) {
         if (foundSkills) skillsInfo.push(textDataArray[i])
         else if (textDataArray[i] == 'Top Skills') foundSkills = true;
@@ -122,18 +121,18 @@ async function getExperienceInfo(textDataArray) {
 
 async function getInformationFromPDF(pdfBuffer) {
     const textDataArray = (await pdf(pdfBuffer)).text.trim().split('\n');
-    console.log(textDataArray, "\n\n")
+    // console.log(textDataArray, "\n\n")
     const contactInfo = await getContactInfo(textDataArray)
-    console.log(contactInfo)
+    console.log("ContactInfo= \n", contactInfo)
 
     const skillsInfo = await getSkillsInfo(textDataArray)
-    console.log(skillsInfo)
+    console.log("SkillsInfo= \n",skillsInfo)
 
     const languageInfo = await getLanguageInfo(textDataArray)
-    console.log(languageInfo)
+    console.log("LanguageInfo= \n",languageInfo)
 
     const experienceInfo = await getExperienceInfo(textDataArray)
-    console.log(experienceInfo)
+    console.log("ExperienceInfo= \n",experienceInfo)
 }
 
 module.exports = {
