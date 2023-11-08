@@ -1,0 +1,30 @@
+.footer{
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.5;
+    margin-top: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer__container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.footer__logo{
+    height: 50px;
+    width: 60px;
+    margin-right: 5px;
+}
+
+.footer__title{
+    font-size: 30px;
+    font-weight: bold;
+}
