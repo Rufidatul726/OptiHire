@@ -1,0 +1,254 @@
+ABAP
+ABC
+ActionScript
+Ada
+Agda
+ALGOL
+Alice
+AMPL
+Apex
+APL
+AppleScript
+Assembly language
+Awk
+Bash
+BASIC
+BCPL
+BETA
+Boo
+C
+C--
+C#
+C++
+Chapel
+Charm
+Chef
+CHILL
+Clarion
+Clean
+Clipper
+Clojure
+COBOL
+Cobra
+CoffeeScript
+ColdFusion
+COMAL
+Common Lisp
+Crystal
+Curry
+Cython
+D
+Dart
+Delphi
+Dylan
+E
+Eiffel
+Elixir
+Elm
+Emacs Lisp
+Erlang
+Escher
+Esperanto
+Esterel
+Falcon
+Fantom
+F#
+Felix
+Forth
+Fortran
+FoxPro
+Frege
+Game Maker Language
+GML
+GLSL
+Golang
+Gosu
+Groovy
+Hack
+Haskell
+Haxe
+HTML/CSS
+HTML
+CSS
+Icon
+IDL
+Inform
+Io
+Ioke
+J
+J#
+Java
+JavaScript
+JS
+JCL
+Join Java
+Julia
+JScript
+Julia
+K
+Kotlin
+LabVIEW
+Ladder Logic
+Lisp
+Logo
+Lua
+Lustre
+MATLAB
+Mercury
+MIPS Assembly
+Mirah
+MIVA Script
+ML
+Modula-2
+Monkey
+NASM
+Nemerle
+Nim
+NQC
+NSIS
+Nu
+Objective-C
+Oberon
+Octave
+OpenCL
+Oz
+Pascal
+Perl
+PHP
+Pike
+PL/SQL
+Pony
+PostScript
+PowerShell
+Processing
+Prolog
+Pure Data
+Python
+R
+Racket
+Rails
+REXX
+Ring
+RPL
+Ruby
+Rust
+S
+S-PLUS
+Scala
+Scheme
+Scratch
+Sed
+Self
+Bash
+PowerShell
+Slang
+Smalltalk
+Solidity
+SML
+SQL
+MySQL
+SQLite
+Swift
+Tcl
+Tea
+Thue
+TypeScript
+Turing
+TXL
+Ubercode
+UCSD Pascal
+Unicon
+Vala
+VHDL
+Visual Basic
+Visual Basic .NET
+.NET
+Visual FoxPro
+WATFIV
+WATFOR
+WebAssembly
+Winbatch
+Wolfram Language
+Wollok
+Wyvern
+XML/XSLT
+XML
+XSLT
+Xojo
+XPL
+XSLT
+Xtend
+Yacc
+Yorick
+Z notation
+Zebra
+ZPL
+Zig
+Zope Page Templates
+ZPT
+
+
+
+
+
+AngularJS
+Angular
+Angular JS
+NodeJS
+Node JS
+ReactJS
+React JS
+Vue.js
+Express.js
+ExpressJS
+Express js
+Express
+Django
+Flask
+Ruby on Rails
+Spring
+Hibernate
+Laravel
+Symfony
+ASP.NET
+Koa
+Pyramid
+CherryPy
+Flask-RESTful
+Flask
+Bootstrap
+jQuery
+TensorFlow
+PyTorch
+Vue.js
+React Native
+ReactNative
+Flutter
+Dart
+RxJS
+Redux
+Selenium
+Jupyter
+D3.js
+Three.js
+OpenGL
+Qt
+Unity
+Node.js
+NodeJS
+Node
+RxJava
+Retrofit
+Gatsby
+Next.JS
+NextJS
+Next JS
+Symfony
+Lumen
+FastAPI
+Fast API
+Fast-API
+Hapi.js
+Play
+NestJS
+Quarkus

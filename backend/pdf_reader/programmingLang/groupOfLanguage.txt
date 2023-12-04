@@ -1,0 +1,123 @@
+###Backend Development###
+Express.js
+Koa.js
+Hapi.js
+Spring Framework
+Hibernate
+Django
+Flask
+FastAPI
+Ruby on Rails
+Laravel
+Symfony
+Lumen
+ASP.NET
+.NET
+Gin
+Beego
+
+
+###Frontend Development (UI)###
+React.js
+Vue.js
+Angular
+Bootstrap
+Tailwind CSS
+Dart
+Flutter
+Swift
+SwiftUI
+UIKit
+Kotlin
+Android SDK
+jQuery
+
+
+###Mobile App Development###
+React Native
+Dart
+Flutter
+Kotlin
+Android SDK
+Swift
+SwiftUI
+UIKit
+
+
+###Game Development###
+C++
+C#
+Unity
+###Data Science and Machine Learning###
+Python
+TensorFlow
+PyTorch
+SciKit-Learn
+R
+Shiny
+
+
+###Web Assembly (Wasm) Development###
+Rust
+Yew
+
+
+###Full Stack Development###
+JavaScript
+Node.js
+Express.js
+Meteor
+Python
+Django
+Flask
+Java
+Spring Framework
+Play Framework
+PHP
+Laravel
+Ruby
+Ruby on Rails
+C#
+ASP.NET
+.NET
+Go
+Gin
+Beego
+
+
+###Automation and Scripting###
+Python
+Selenium
+Flask-RESTful
+JavaScript
+Node.js
+Puppeteer
+Shell Scripting
+Bash
+PowerShell
+
+
+###Object-Oriented Programming###
+Java
+C++
+Python
+Ruby
+C#
+
+
+###Educational and Learning###
+Scratch
+Python
+Java
+
+
+###Testing###
+Jasmine
+Mocha
+Jest
+Pytest
+Selenium
+JUnit
+TestNG
+RSpec
+NUnit
