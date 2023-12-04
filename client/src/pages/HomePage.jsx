@@ -1,4 +1,6 @@
 import React from 'react';
+import Form from '../components/Form';
+import UploadPDF from '../components/UploadPDF';
 import '../styles/Homepage.css';
 
 const HomePage = () => {
@@ -6,9 +8,11 @@ const HomePage = () => {
     <div className='homepage'>
       <div className='homepage__left'>
         <div className='homepage__left__title'>Drop your resume here,<br/> Get a job!</div>
+        <UploadPDF />
       </div>
       <div className='homepage__right'>
         <div className='homepage__right__title'>Want to Hire?<br/> Give me your requirements!</div>
+        <Form />
       </div>
     </div>
   );

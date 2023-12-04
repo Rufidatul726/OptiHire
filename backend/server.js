@@ -1,5 +1,4 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const multer = require('multer');
 const pdf = require('pdf-parse');
 const natural = require('natural');
@@ -7,21 +6,10 @@ const cors = require('cors');
 const { getInformationFromPDF } = require('./pdf_reader');
 const app = express();
 const port = 9000;
-const userRoutes = require("./user/userRoutes");
-const url = "mongodb+srv://classproject:classproject@optihire.hew1xqe.mongodb.net/?retryWrites=true&w=majority";
+// const url = "mongodb+srv://classproject:classproject@optihire.hew1xqe.mongodb.net/?retryWrites=true&w=majority";
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
 
-mongoose.connect(url, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true
-})
-  .then(() => {
-    console.log(`MongoDB Connected: ${mongoose.connection.host}`);
-  })
-  .catch((error) => {
-    console.log("Error connecting to MongoDB:", error);
-  });
 app.use(express.json());
 app.use(cors());
 
@@ -60,7 +48,11 @@ app.post('/upload', upload.single('pdf'), async (req, res) => {
   }
 });
 
+app.post('/api/form', (req, res) => {
+  console.log(req.body);
+  res.json({ message: 'Data received!' });
+});
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
-app.use(userRoutes);
