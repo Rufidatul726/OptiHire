@@ -133,6 +133,7 @@ async function getInformationFromPDF(pdfBuffer) {
 
     const experienceInfo = await getExperienceInfo(textDataArray)
     console.log("ExperienceInfo= \n",experienceInfo)
+    console.log("\n\n\n");
 }
 
 module.exports = {
