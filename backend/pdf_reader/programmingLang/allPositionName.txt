@@ -1,59 +1,59 @@
-###High Level###
-Blockchain Architect
-Senior Blockchain Developer
-Lead Blockchain Architect
-Lead Software Architect
-Lead Full-Stack Developer
-Senior Software Engineer II
-Senior Frontend Developer
-Senior Backend Developer
-Principal Full Stack Web Developer
-Principal Software Development Engineer
-Chief Technology Officer (CTO)
-Lead Mobile App Developer
-Senior Mobile App Developer
-Senior Cloud Engineer
-Principal Data Scientist
-Lead DevOps Engineer
-Principal Cybersecurity Engineer
-Senior API Developer
-Principal UI/UX Developer
+### High Level ###
+Blockchain
+Senior Blockchain
+Lead Blockchain
+Lead Software
+Lead Full-Stack
+Senior Software II
+Senior Frontend
+Senior Backend
+Principal Full Stack Web
+Principal Software Development
+Chief Technology (CTO)
+Lead Mobile App
+Senior Mobile App
+Senior Cloud
+Principal Data
+Lead DevOps
+Principal Cybersecurity
+Senior API
+Principal UI/UX
 
-###Moderate Level###
-Deputy Chief Technology Officer
-Senior Associate Software Engineer
-Associate Frontend Developer
-Associate Backend Developer
-Associate Full-Stack Developer
-Associate DevOps Engineer
-Associate Data Scientist
-Flutter App Developer
+### Moderate Level ###
+Deputy Chief Technology
+Senior Associate Software
+Associate Frontend
+Associate Backend
+Associate Full-Stack
+Associate DevOps
+Associate Data
+Flutter App
 Machine Learning Specialist
 Software Quality Assurance Specialist
-Mobile App QA Engineer
-Cloud Solutions Engineer
+Mobile App QA
+Cloud Solutions
 
-###Mid-Low Level###
-Junior Frontend Developer
-Junior Backend Developer
-Junior Full-Stack Developer
-Junior DevOps Engineer
+### Mid-Low Level ###
+Junior Frontend
+Junior Backend
+Junior Full-Stack
+Junior DevOps
 Junior Data Analyst
-Junior UI/UX Designer
-Junior Cloud Engineer
-Junior Mobile App Developer
+Junior UI/UX
+Junior Cloud
+Junior Mobile App
 Junior Cybersecurity Analyst
-Junior AI Engineer
-Junior Machine Learning Developer
-Junior Flutter Developer
+Junior AI
+Junior Machine Learning
+Junior Flutter
 
-###Low Level###
+### Low Level ###
 Software Development Intern
 AI Research Intern
 IT Internship Trainee
-Software Engineering Trainee
+Software ing Trainee
 Blockchain Development Intern
-Summer Research Intern in Software Engineering
+Summer Research Intern in Software ing
 UI/UX Design Intern
 Data Science Intern
 Cybersecurity Intern
