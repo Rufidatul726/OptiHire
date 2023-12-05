@@ -42,7 +42,8 @@ app.post('/upload', upload.single('pdf'), async (req, res) => {
 
     // // console.log(normalizedTokens);
     // res.json({ text: text, tokens: normalizedTokens });
-    res.json({ rating: Math.floor(Math.random() * 101)});
+    const randomRating = Math.floor(Math.random() * 100) + 1;
+    res.json({ rating: randomRating});
   } catch (err) {
     console.error(err);
     res.status(500).send('Server error');
