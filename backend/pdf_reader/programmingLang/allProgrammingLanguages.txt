@@ -1,7 +1,6 @@
 ABAP
 ABC
 ActionScript
-Action Script
 Ada
 Agda
 ALGOL
@@ -10,7 +9,7 @@ AMPL
 Apex
 APL
 AppleScript
-Assembly language
+Assembly
 Awk
 Bash
 BASIC
@@ -34,7 +33,6 @@ Cobra
 CoffeeScript
 ColdFusion
 COMAL
-Common Lisp
 Crystal
 Curry
 Cython
@@ -46,7 +44,6 @@ E
 Eiffel
 Elixir
 Elm
-Emacs Lisp
 Erlang
 Escher
 Esperanto
@@ -59,7 +56,6 @@ Forth
 Fortran
 FoxPro
 Frege
-Game Maker Language
 GML
 GLSL
 Golang
@@ -80,7 +76,6 @@ J
 J#
 Java
 JavaScript
-Java Script
 JS
 JCL
 Join Java
@@ -91,16 +86,13 @@ Julia
 K
 Kotlin
 LabVIEW
-Ladder Logic
 Lisp
 Logo
 Lua
 Lustre
 MATLAB
 Mercury
-MIPS Assembly
 Mirah
-MIVA Script
 ML
 Modula-2
 Monkey
@@ -110,8 +102,7 @@ Nim
 NQC
 NSIS
 Nu
-Objective-C
-Objective C
+ObjectiveC
 Oberon
 Octave
 OpenCL
@@ -120,7 +111,6 @@ Pascal
 Perl
 PHP
 Pike
-PL/SQL
 Pony
 PostScript
 PowerShell
@@ -158,7 +148,6 @@ Tcl
 Tea
 Thue
 TypeScript
-Type Script
 Turing
 TXL
 Ubercode
@@ -166,18 +155,15 @@ UCSD Pascal
 Unicon
 Vala
 VHDL
-Visual Basic
-Visual Basic .NET
+VisualBasic
 .NET
-Visual FoxPro
+NET
 WATFIV
 WATFOR
 WebAssembly
 Winbatch
-Wolfram Language
 Wollok
 Wyvern
-XML/XSLT
 XML
 XSLT
 Xojo
@@ -191,71 +177,64 @@ Z-notation
 Zebra
 ZPL
 Zig
-Zope Page Templates
 ZPT
 
 
 
 
-
+Docker
+nginx
+mongodb
+mongo db
 AngularJS
 Angular
-Angular JS
 NodeJS
-Node JS
+Node
 ReactJS
-React JS
-Vue.js
-Express.js
+React
+VueJS
 ExpressJS
-Express js
 Express
 Django
 Flask
-Ruby on Rails
 Spring
 Hibernate
 Laravel
 Symfony
-ASP.NET
+ASPNET
+ASP
 Koa
 Pyramid
 CherryPy
-Flask-RESTful
 Flask
 Bootstrap
 jQuery
 TensorFlow
 PyTorch
-Vue.js
 React Native
 ReactNative
 Flutter
-Dart
 RxJS
 Redux
 Selenium
 Jupyter
-D3.js
-Three.js
+D3
+D3JS
+ThreeJS
+Three
 OpenGL
 Qt
 Unity
-Node.js
-NodeJS
-Node
 RxJava
 Retrofit
 Gatsby
-Next.JS
+Next
 NextJS
-Next JS
 Symfony
 Lumen
 FastAPI
-Fast API
-Fast-API
-Hapi.js
+HapiJS
+Hapi
 Play
 NestJS
 Quarkus
