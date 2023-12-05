@@ -15,33 +15,34 @@ app.use(cors());
 
 app.post('/upload', upload.single('pdf'), async (req, res) => {
   try {
-    if (!req.file) {
-      return res.status(400).send('No file uploaded.');
-    }
+    // if (!req.file) {
+    //   return res.status(400).send('No file uploaded.');
+    // }
 
-    const buffer = req.file.buffer;
-    getInformationFromPDF(buffer);
-    const data = await pdf(buffer);
+    // const buffer = req.file.buffer;
+    // getInformationFromPDF(buffer);
+    // const data = await pdf(buffer);
 
-    const text = data.text;
+    // const text = data.text;
 
-    // Tokenization
-    const tokenizer = new natural.WordTokenizer();
-    const tokens = tokenizer.tokenize(text);
+    // // Tokenization
+    // const tokenizer = new natural.WordTokenizer();
+    // const tokens = tokenizer.tokenize(text);
 
-    // Stopword Removal (using natural library's built-in stopwords)
-    const stopwords = natural.stopwords;
-    const filteredTokens = tokens.filter(token => !stopwords.includes(token.toLowerCase()));
+    // // Stopword Removal (using natural library's built-in stopwords)
+    // const stopwords = natural.stopwords;
+    // const filteredTokens = tokens.filter(token => !stopwords.includes(token.toLowerCase()));
 
-    // Stemming
-    const porterStemmer = natural.PorterStemmer;
-    const stemmedTokens = filteredTokens.map(token => porterStemmer.stem(token));
+    // // Stemming
+    // const porterStemmer = natural.PorterStemmer;
+    // const stemmedTokens = filteredTokens.map(token => porterStemmer.stem(token));
 
-    // Text Normalization
-    const normalizedTokens = stemmedTokens.map(token => token.toLowerCase());
+    // // Text Normalization
+    // const normalizedTokens = stemmedTokens.map(token => token.toLowerCase());
 
-    // console.log(normalizedTokens);
-    res.json({ text: text, tokens: normalizedTokens });
+    // // console.log(normalizedTokens);
+    // res.json({ text: text, tokens: normalizedTokens });
+    res.json({ rating: Math.floor(Math.random() * 101)});
   } catch (err) {
     console.error(err);
     res.status(500).send('Server error');
