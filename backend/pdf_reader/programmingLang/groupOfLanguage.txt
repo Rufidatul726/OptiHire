@@ -19,7 +19,7 @@ Beego
 Docker
 mongodb
 nginx
-Fullstact
+fullstack
 
 
 ###Frontend Development (UI)###
@@ -38,7 +38,7 @@ UIKit
 Kotlin
 jQuery
 Docker
-Fullstact
+fullstack
 
 
 ###Mobile App Development###
@@ -96,7 +96,7 @@ Gin
 Beego
 Docker
 mongodb
-Fullstact
+fullstack
 
 
 ###Automation and Scripting###

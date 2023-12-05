@@ -48,7 +48,7 @@ function findAllLanguage(tokens, allProgrammingLanguages) {
         }
         tokenStart++
     }
-    console.log(allLanguages)
+    return [...new Set(allLanguages)];
 }
 
 
@@ -57,8 +57,10 @@ async function abc() {
     const pdfPath = 'Profile_38.pdf';
     const fileBuffer = await fs.readFileSync(pdfPath);
     let filteredTokens = await getTokens(fileBuffer);
+    // console.log(filteredTokens)
     let allProgrammingLanguages = await readAllLanguage(); 
-    findAllLanguage(filteredTokens, allProgrammingLanguages)
+    let allLanguages = findAllLanguage(filteredTokens, allProgrammingLanguages);
+    console.log(allLanguages)
 }
 abc()
 

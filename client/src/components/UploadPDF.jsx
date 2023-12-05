@@ -34,6 +34,8 @@ const UploadPDF = () => {
     }
   
     setUploading(true)
+    //files rating
+    // const filesRatinng = [];
   
     for (const file of pdfFiles) {
       const formData = new FormData()
@@ -46,6 +48,7 @@ const UploadPDF = () => {
         })
   
         if (response.ok) {
+          // filesRatinng.push({fileName: , rating: response.message.rating})
           console.log(`File ${file.name} was uploaded successfully.`)
         } else {
           console.error(`File ${file.name} upload failed.`)
