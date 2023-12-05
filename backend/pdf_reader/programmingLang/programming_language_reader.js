@@ -1,79 +1,65 @@
 const fs = require('fs');
 const pdf = require('pdf-parse');
 const natural = require('natural');
-let filteredTokens;
 
-// Replace 'path-to-your-pdf-file.pdf' with the actual path to your PDF file
-const pdfPath = 'Profile_38.pdf';
-const dataBuffer = fs.readFileSync(pdfPath);
-pdf(dataBuffer).then(data => {
-    // Extracted text content from the PDF
-    const textContent = data.text;
+async function getTokens(fileBuffer) {
+    try {
+        const data = await pdf(fileBuffer);
+        let textContent = data.text;
+        textContent = textContent.replace(/-/g, '');
+        textContent = textContent.replace(/\./g, '');
+        const stopwords = natural.stopwords;
 
-    // Do something with the text content
-    // Tokenization
-    const tokenizer = new natural.WordTokenizer();
-    const tokens = tokenizer.tokenize(textContent);
-
-    // Stopword Removal (using natural library's built-in stopwords)
-    const stopwords = natural.stopwords;
-    // filteredTokens = tokens.filter(token => !stopwords.includes(token.toLowerCase()));
-    filteredTokens = tokens
-
-    //   let i = filteredTokens.length;
-    //   for(let j=0;j<i;j++) console.log((filteredTokens[j]))
-
-    console.log(tokens);
-}).catch(error => {
-    console.error('Error reading PDF:', error);
-});
+        const customTokenizer = /\b[A-Za-z]\+ |\b[A-Za-z]\+\+|\b[A-Za-z]#|\b\w+\b/g;
+        let tokens = textContent.match(customTokenizer);
+        const filteredTokens = tokens.filter(token => !stopwords.includes(token.toLowerCase()));
+        const lowercaseTokens = filteredTokens.map(token => token.toLowerCase());
+        return lowercaseTokens;
+    }
+    catch (error) {
+        console.error('Error reading PDF:', error);
+    }
+}
 
 
-
-function readAllLanguage(tokes) {
+function readAllLanguage() {
     const filePath = 'allProgrammingLanguages.txt';
     const fileContent = fs.readFileSync(filePath, 'utf-8');
+    // Split the content into an array based on line breaks
+    const languagesArray = fileContent.split('\n').map(line => line.trim());
+    const lowercaseLanguageArray = languagesArray.map(token => token.toLowerCase());
+    return lowercaseLanguageArray;
+}
+
+
+function findAllLanguage(tokens, allProgrammingLanguages) {
     const allLanguages = [];
 
-    // Split the content into an array based on line breaks
-    const linesArray = fileContent.split('\n').map(line => line.trim());
-    const languages = linesArray.map(line => line.split(' ').map(word => word.trim()));
-
-    // Print the resulting array
-    // console.log(languages);
-
-
-    let tokenStart = 0, tokenEnd = tokes.length;
-    let start = 0, end = languages.length
+    let tokenStart = 0, tokenEnd = tokens.length;
+    let start = 0, end = allProgrammingLanguages.length
     while (tokenStart < tokenEnd) {
         start = 0;
         while (start < end) {
-            if (tokes[tokenStart] == languages[start][0]) {
-                let temp = languages[start].length, i=0;
-                let temp2 = true; 
-                while (i<temp) {
-                    if(tokes[tokenStart] != languages[start][i]) {
-                        temp2 = false;
-                        break;
-                    }
-                    i++;
-                    tokenStart++;
-                }
-                tokenStart--;
-                // if temp2 == true then the language is in the
-                if(temp2){
-                    allLanguages.push(languages[start])
-                }
-
+            if (tokens[tokenStart] == allProgrammingLanguages[start]) {
+                allLanguages.push(allProgrammingLanguages[start]);
+                break;
             }
             start++;
         }
+        tokenStart++
     }
-
-
+    console.log(allLanguages)
 }
 
-// readAllLanguage(filteredTokens)
 
+
+async function abc() {
+    const pdfPath = 'Profile_38.pdf';
+    const fileBuffer = await fs.readFileSync(pdfPath);
+    let filteredTokens = await getTokens(fileBuffer);
+    let allProgrammingLanguages = await readAllLanguage(); 
+    findAllLanguage(filteredTokens, allProgrammingLanguages)
+}
+abc()
 
 
