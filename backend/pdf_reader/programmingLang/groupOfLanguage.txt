@@ -1,13 +1,14 @@
 ###Backend Development###
-Express.js
-Koa.js
-Hapi.js
-Spring Framework
+Express
+ExpressJS
+Koa
+Hapi
+HapiJS
+Spring
 Hibernate
 Django
 Flask
 FastAPI
-Ruby on Rails
 Laravel
 Symfony
 Lumen
@@ -15,30 +16,34 @@ ASP.NET
 .NET
 Gin
 Beego
+Docker
+mongodb
+nginx
 
 
 ###Frontend Development (UI)###
-React.js
-Vue.js
+ReactJS
+React
+nginx
+Vue
+VueJS
 Angular
 Bootstrap
-Tailwind CSS
 Dart
 Flutter
 Swift
 SwiftUI
 UIKit
 Kotlin
-Android SDK
 jQuery
+Docker
 
 
 ###Mobile App Development###
-React Native
+ReactNative
 Dart
 Flutter
 Kotlin
-Android SDK
 Swift
 SwiftUI
 UIKit
@@ -48,11 +53,12 @@ UIKit
 C++
 C#
 Unity
+
+
 ###Data Science and Machine Learning###
 Python
 TensorFlow
 PyTorch
-SciKit-Learn
 R
 Shiny
 
@@ -64,25 +70,30 @@ Yew
 
 ###Full Stack Development###
 JavaScript
-Node.js
-Express.js
+nginx
+Node
+NodeJS
+ExpressJS
+Express
 Meteor
 Python
 Django
 Flask
 Java
-Spring Framework
-Play Framework
+Spring
+Play
 PHP
 Laravel
 Ruby
-Ruby on Rails
 C#
-ASP.NET
-.NET
+ASPNET
+ASP
+NET
 Go
 Gin
 Beego
+Docker
+mongodb
 
 
 ###Automation and Scripting###
@@ -90,9 +101,10 @@ Python
 Selenium
 Flask-RESTful
 JavaScript
-Node.js
+NodeJS
+Node
 Puppeteer
-Shell Scripting
+ShellScripting
 Bash
 PowerShell
 
