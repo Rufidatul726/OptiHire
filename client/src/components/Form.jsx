@@ -6,7 +6,6 @@ const Form = () => {
   const [fields, setFields] = useState([]);
   const [selectedLanguages, setSelectedLanguages] = useState([]);
   const [maxCandidates, setMaxCandidates] = useState('');
-  const [experienceYears, setExperienceYears] = useState('');
 
   const [languages, setLanguages] = useState([
     { id: 1, name: 'JavaScript' },
@@ -35,13 +34,18 @@ const Form = () => {
   ]);
 
   const handleSelectChange = (event) => {
-    setSelectedfield(event.target.value);
-    setFields([...fields, event.target.value]);
-    setSelectedfield('');
+    if(selectedfield.includes(event.target.value)){
+      setSelectedfield(selectedfield.filter((l) => l !== event.target.value));
+    }else{
+      setSelectedfield(event.target.value);
+      setFields([...fields, event.target.value]);
+    }
   };
   
   const handleLanguageChange = (event) => {
+    event.preventDefault();
     const language = event.target.value;
+    console.log(language);
     if (selectedLanguages.includes(language)) {
       setSelectedLanguages(selectedLanguages.filter((l) => l !== language));
     } else {
@@ -53,18 +57,14 @@ const Form = () => {
     setMaxCandidates(event.target.value);
   }
 
-  const handleExperienceChange = (event) => {
-    setExperienceYears(event.target.value);
-  }
-
   const handleSubmit = () => {
-    if (selectedLanguages.length > 0 && fields.length>0 && experienceYears !== '' && maxCandidates !== '') {
+    if (selectedLanguages.length > 0 && fields.length>0 && maxCandidates !== '') {
       fetch('http://localhost:9000/api/form', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ fields, selectedLanguages, experienceYears, maxCandidates }),
+        body: JSON.stringify({ fields, selectedLanguages, maxCandidates }),
       })
         .then(response => response.json())
         .then(data => {
@@ -113,10 +113,13 @@ const Form = () => {
               <option value={language.name}>{language.name}</option>
             ))}
           </select>
-        </div>
-        <div className='form__content__input'>
-          <div className='form__content__input__title'>Years of experience</div>
-          <input type="number" id="experienceYears" value={experienceYears} onChange={handleExperienceChange} />
+          <ul className='form__content__input__list'>
+            {selectedLanguages.map((language, index) => (
+              <li className='form__content__input__list__item' key={index} onClick={() => setSelectedLanguages(selectedLanguages.filter((l) => l !== language))}>
+                {language}
+              </li>
+            ))}
+          </ul>
         </div>
         <div className='form__content__input'>
           <div className='form__content__input__title'>Maximum Candidates to be Shortlisted</div>
