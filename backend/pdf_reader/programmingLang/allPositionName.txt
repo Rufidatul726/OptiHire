@@ -1,0 +1,61 @@
+###High Level###
+Blockchain Architect
+Senior Blockchain Developer
+Lead Blockchain Architect
+Lead Software Architect
+Lead Full-Stack Developer
+Senior Software Engineer II
+Senior Frontend Developer
+Senior Backend Developer
+Principal Full Stack Web Developer
+Principal Software Development Engineer
+Chief Technology Officer (CTO)
+Lead Mobile App Developer
+Senior Mobile App Developer
+Senior Cloud Engineer
+Principal Data Scientist
+Lead DevOps Engineer
+Principal Cybersecurity Engineer
+Senior API Developer
+Principal UI/UX Developer
+
+###Moderate Level###
+Deputy Chief Technology Officer
+Senior Associate Software Engineer
+Associate Frontend Developer
+Associate Backend Developer
+Associate Full-Stack Developer
+Associate DevOps Engineer
+Associate Data Scientist
+Flutter App Developer
+Machine Learning Specialist
+Software Quality Assurance Specialist
+Mobile App QA Engineer
+Cloud Solutions Engineer
+
+###Mid-Low Level###
+Junior Frontend Developer
+Junior Backend Developer
+Junior Full-Stack Developer
+Junior DevOps Engineer
+Junior Data Analyst
+Junior UI/UX Designer
+Junior Cloud Engineer
+Junior Mobile App Developer
+Junior Cybersecurity Analyst
+Junior AI Engineer
+Junior Machine Learning Developer
+Junior Flutter Developer
+
+###Low Level###
+Software Development Intern
+AI Research Intern
+IT Internship Trainee
+Software Engineering Trainee
+Blockchain Development Intern
+Summer Research Intern in Software Engineering
+UI/UX Design Intern
+Data Science Intern
+Cybersecurity Intern
+Mobile App Development Trainee
+Web Development Intern
