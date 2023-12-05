@@ -6,12 +6,11 @@ const UploadPDF = () => {
   const [pdfFiles, setPdfFiles] = useState([]);
   const [pdfFile, setPdfFile] = useState(null);
   const [uploading, setUploading] = useState(false);
-  const [modalOpen, setModalOpen] = useState(false); 
-  const [filesRating, setFilesRating] = useState([]); 
+  const [modalOpen, setModalOpen] = useState(false);
+  const [filesRating, setFilesRating] = useState([]);
 
   useEffect(() => {
     return () => {
-      // Cleanup function to close the modal when component unmounts
       setModalOpen(false);
     };
   }, []);
@@ -39,7 +38,7 @@ const UploadPDF = () => {
   };
 
   const handleUpload = async () => {
-    if (pdfFiles.length === 0) {
+    if (pdfFiles.length === 0 && !pdfFile) {
       return;
     }
 
@@ -62,9 +61,6 @@ const UploadPDF = () => {
           newFilesRating.push({ fileName: file.name, rating: data.rating });
           console.log("fileName:", file.name, "rating: ", data.rating);
           console.log(`File ${file.name} was uploaded successfully.`);
-
-          // Open the modal immediately after getting the response
-          setModalOpen(true);
         } else {
           console.error(`File ${file.name} upload failed.`);
         }
@@ -73,15 +69,42 @@ const UploadPDF = () => {
       }
     }
 
+    // Append the single file
+    if (pdfFile) {
+      const singleFileFormData = new FormData();
+      singleFileFormData.append('pdf', pdfFile);
+
+      try {
+        const response = await fetch('http://localhost:9000/upload', {
+          method: 'POST',
+          body: singleFileFormData,
+        });
+
+        if (response.ok) {
+          const data = await response.json();
+          newFilesRating.push({ fileName: pdfFile.name, rating: data.rating });
+          console.log("fileName:", pdfFile.name, "rating: ", data.rating);
+          console.log(`Single file was uploaded successfully.`);
+        } else {
+          console.error(`Single file upload failed.`);
+        }
+      } catch (error) {
+        console.error(`Single file upload failed:`, error);
+      }
+    }
+
     setFilesRating(newFilesRating);
+    setModalOpen(true);
     setUploading(false);
   };
+
   const handleFileInputChange = (e) => {
     const selectedFile = e.target.files[0];
     if (selectedFile) {
       setPdfFile(selectedFile);
     }
   };
+
   return (
     <div className='upload'>
       <div className='upload__title'>Upload PDF</div>
@@ -94,7 +117,6 @@ const UploadPDF = () => {
               type='file'
               webkitdirectory=''
               directory=''
-              // style={{ display: 'none' }}
               onChange={handleFilesInputChange}
             />
             <div className='upload__content__input__button' onClick={handleFolderSelect}>
@@ -106,12 +128,8 @@ const UploadPDF = () => {
             <input
               id='fileInput'
               type='file'
-              // style={{ display: 'none' }}
               onChange={handleFileInputChange}
             />
-            {/* <div className='upload__content__input__button' onClick={handleFileSelect}>
-              Select
-            </div> */}
           </div>
         </div>
         <div className='upload__content__button' onClick={handleUpload}>
@@ -122,25 +140,25 @@ const UploadPDF = () => {
         <div className='modal'>
           <h3>Total Rating</h3>
           <table>
-              <thead>
-                <tr>
-                  <th>File Name</th>
-                  <th>Rating</th>
+            <thead>
+              <tr>
+                <th>File Name</th>
+                <th>Rating</th>
+              </tr>
+            </thead>
+            <tbody>
+              {filesRating.map((file) => (
+                <tr key={file.fileName}>
+                  <td>{file.fileName}</td>
+                  <td>{file.rating}</td>
                 </tr>
-              </thead>
-              <tbody>
-                {filesRating.map((file) => (
-                  <tr key={file.fileName}>
-                    <td>{file.fileName}</td>
-                    <td>{file.rating}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+              ))}
+            </tbody>
+          </table>
         </div>
       )}
     </div>
-  )
-}
+  );
+};
 
-export default UploadPDF
+export default UploadPDF;
