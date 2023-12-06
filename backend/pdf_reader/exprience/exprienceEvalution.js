@@ -20,7 +20,7 @@ function readAllCompanyName() {
 }
 
 function readAllCompanysRating() {
-    const filePath = 'allCompanies.txt';
+    const filePath = path.join(__dirname, 'allCompanies.txt'); // Use path.join to construct the file path
     const fileContent = fs.readFileSync(filePath, 'utf-8');
 
     const lines = fileContent.split('\n').filter(line => line.trim() !== '');
@@ -34,7 +34,6 @@ function readAllCompanysRating() {
     });
     return resultArray;
 }
-
 function findAllCompanys(tokens, allCompaniesName) {
     const allCompanies = [];
 

@@ -1,9 +1,10 @@
 const fs = require('fs');
+const path = require('path');
 const positionsFileName = 'allPositionName2.txt';
 
 
 function createPositionsGroups() {
-    const filePath = positionsFileName;
+    const filePath = path.join(__dirname, positionsFileName); // Use path.join to construct the file path
     const fileContent = fs.readFileSync(filePath, 'utf-8');
 
     // Split the content into an array based on line breaks
@@ -38,7 +39,7 @@ function createPositionsGroups() {
 
 
 function readAllPositionName() {
-    const filePath = positionsFileName;
+    const filePath = path.join(__dirname, positionsFileName); // Use path.join to construct the file path
     const fileContent = fs.readFileSync(filePath, 'utf-8');
 
     // Split the content into an array based on line breaks
