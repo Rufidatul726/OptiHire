@@ -4,6 +4,7 @@ const pdf = require('pdf-parse');
 const natural = require('natural');
 const cors = require('cors');
 const { getInformationFromPDF } = require('./pdf_reader');
+const { constants } = require('crypto');
 const app = express();
 const port = 9000;
 // const url = "mongodb+srv://classproject:classproject@optihire.hew1xqe.mongodb.net/?retryWrites=true&w=majority";
@@ -13,13 +14,36 @@ const upload = multer({ storage: storage });
 app.use(express.json());
 app.use(cors());
 
+async function getTokens(fileBuffer) {
+  try {
+      const data = await pdf(fileBuffer);
+      let textContent = data.text;
+      textContent = textContent.replace(/-/g, '');
+      textContent = textContent.replace(/\./g, '');
+      const stopwords = natural.stopwords;
+
+      const customTokenizer = /\b[A-Za-z]\+ |\b[A-Za-z]\+\+|\b[A-Za-z]#|\b\w+\b/g;
+      let tokens = textContent.match(customTokenizer);
+      const filteredTokens = tokens.filter(token => !stopwords.includes(token.toLowerCase()));
+      const lowercaseTokens = filteredTokens.map(token => token.toLowerCase());
+      return lowercaseTokens;
+  }
+  catch (error) {
+      console.error('Error reading PDF:', error);
+  }
+}
+
 app.post('/upload', upload.single('pdf'), async (req, res) => {
   try {
-    // if (!req.file) {
-    //   return res.status(400).send('No file uploaded.');
-    // }
+    if (!req.file) {
+      return res.status(400).send('No file uploaded.');
+    }
 
-    // const buffer = req.file.buffer;
+    const buffer = req.file.buffer;
+    const tokens = getTokens(buffer);
+    let expEva = await getExprienceEvalutionValue(filteredTokens);
+    
+    
     // getInformationFromPDF(buffer);
     // const data = await pdf(buffer);
 

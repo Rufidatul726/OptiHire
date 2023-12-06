@@ -1,26 +1,4 @@
 const fs = require('fs');
-const pdf = require('pdf-parse');
-const natural = require('natural');
-
-async function getTokens(fileBuffer) {
-    try {
-        const data = await pdf(fileBuffer);
-        let textContent = data.text;
-        textContent = textContent.replace(/-/g, '');
-        textContent = textContent.replace(/\./g, '');
-        const stopwords = natural.stopwords;
-
-        const customTokenizer = /\b[A-Za-z]\+ |\b[A-Za-z]\+\+|\b[A-Za-z]#|\b\w+\b/g;
-        let tokens = textContent.match(customTokenizer);
-        const filteredTokens = tokens.filter(token => !stopwords.includes(token.toLowerCase()));
-        const lowercaseTokens = filteredTokens.map(token => token.toLowerCase());
-        return lowercaseTokens;
-    }
-    catch (error) {
-        console.error('Error reading PDF:', error);
-    }
-}
-
 
 function readAllLanguage() {
     const filePath = 'allProgrammingLanguages.txt';
@@ -32,7 +10,8 @@ function readAllLanguage() {
 }
 
 
-function findAllLanguage(tokens, allProgrammingLanguages) {
+async function findAllLanguage(tokens) {
+    let allProgrammingLanguages = await readAllLanguage(); 
     const allLanguages = [];
 
     let tokenStart = 0, tokenEnd = tokens.length;
@@ -51,17 +30,8 @@ function findAllLanguage(tokens, allProgrammingLanguages) {
     return [...new Set(allLanguages)];
 }
 
-
-
-async function abc() {
-    const pdfPath = 'Profile_38.pdf';
-    const fileBuffer = await fs.readFileSync(pdfPath);
-    let filteredTokens = await getTokens(fileBuffer);
-    // console.log(filteredTokens)
-    let allProgrammingLanguages = await readAllLanguage(); 
-    let allLanguages = findAllLanguage(filteredTokens, allProgrammingLanguages);
-    console.log(allLanguages)
+module.exports= {
+    findAllLanguage
 }
-abc()
 
 
