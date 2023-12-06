@@ -1,7 +1,8 @@
 const fs = require('fs');
+const path = require('path');
 
 function readAllLanguage() {
-    const filePath = 'allProgrammingLanguages.txt';
+    const filePath = path.join(__dirname, 'allProgrammingLanguages.txt'); 
     const fileContent = fs.readFileSync(filePath, 'utf-8');
     // Split the content into an array based on line breaks
     const languagesArray = fileContent.split('\n').map(line => line.trim());
