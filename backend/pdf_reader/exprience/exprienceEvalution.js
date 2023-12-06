@@ -36,16 +36,13 @@ async function readAllCompanysRating() {
 async function findAllCompanys(tokens, allCompaniesName) {
     const allCompanies = [];
     let tokenStart = 0, tokenEnd = tokens.length;
-    let start = 0, end = allCompaniesName.lengtsh;
-    
+    let start = 0, end = allCompaniesName.length;
+
     while (tokenStart < tokenEnd) {
         start = 0;
-        console.log(allCompaniesName);
         while (start < end) {
-            
+
             if (tokens[tokenStart] == allCompaniesName[start][0]) {
-                console.log("hihi",start,allCompaniesName[0][0]);
-                console.log(allCompaniesName[start][0]);
                 let flag = true;
                 let l = allCompaniesName[start].length;
 
@@ -65,16 +62,14 @@ async function findAllCompanys(tokens, allCompaniesName) {
             }
             start++;
         }
-        
+
         tokenStart++;
     }
-    console.log(allCompanies);
     return allCompanies;
 }
 
 async function getAllPositionInCompanys(tokens, companyNames) {
     const allPositions = allPositionNames.readAllPositionName();
-    // console.log(companyNames);
     const companyWithPosition = [];
 
     for (let i = 0, l = companyNames.length; i < l; i++) {
@@ -95,11 +90,16 @@ async function getExprienceEvalutionValue(tokens) {
     const allCompaniesRating = await readAllCompanysRating();
     const positionGroups = await allPositionNames.createPositionsGroups();
 
-    let allCompanies = readAllCompanyName();
+    let allCompanies = await readAllCompanyName();
     const companyNames = await findAllCompanys(tokens, allCompanies);
     const companyWithPosition = await getAllPositionInCompanys(tokens, companyNames);
-    // console.log(companyWithPosition)
+    // console.log(positionGroups)
     // console.log(allCompaniesRating)
+    // console.log(allCompanies)
+    // console.log(companyNames)
+    // console.log(companyWithPosition)
+
+    if (companyNames.length == 0 || companyWithPosition.length == 0) return 0;
 
     let allEvalutionValue = [];
     for (let i = 0, l = companyWithPosition.length; i < l; i++) {
@@ -124,20 +124,23 @@ async function getExprienceEvalutionValue(tokens) {
             allEvalutionValue.push(companiesRating * (1 + 3))
         }
     }
-    console.log(allEvalutionValue)
-    // Sort the array in descending order
-    const sortedEvalutionValue = allEvalutionValue.sort((a, b) => b - a);
 
-    // Take the first three elements
-    const topThreeValues = sortedEvalutionValue.slice(0, 3);
-    let average = topThreeValues.reduce((sum, value) => sum + value, 0) / topThreeValues.length;
-    console.log(average);
-    if(average > 20) average = 5;
-    else average = average*5/20;
+    if (allEvalutionValue.length == 0) {
+        return 0;
+    }
+    else {
+        const sortedEvalutionValue = allEvalutionValue.sort((a, b) => b - a);
+        // Take the first three elements
+        const topThreeValues = sortedEvalutionValue.slice(0, 3);
+        let average = topThreeValues.reduce((sum, value) => sum + value, 0) / topThreeValues.length;
+        // console.log(average);
+        if (average > 20) average = 5;
+        else average = average * 5 / 20;
 
 
-    if(topThreeValues.length > 2) return average;
-    else return average-1;
+        if (topThreeValues.length > 2) return average;
+        else return average - 1;
+    }
 }
 
 

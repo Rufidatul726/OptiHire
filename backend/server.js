@@ -44,7 +44,7 @@ app.post('/upload', upload.single('pdf'), async (req, res) => {
     const tokens = await getTokens(buffer);
     // console.log(tokens);
     let expEva = await getExprienceEvalutionValue(tokens);
-    console.log(expEva);
+    console.log("expEva", expEva);
     
     // getInformationFromPDF(buffer);
     // const data = await pdf(buffer);
