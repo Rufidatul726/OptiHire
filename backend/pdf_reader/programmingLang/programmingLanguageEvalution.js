@@ -9,7 +9,8 @@ async function getAllRequiredTypeLanguage(requiredType) {
 
 async function getExprienceEvaluationValue(tokens, requiredLanguages, requiredType) {
     const allLanguages = await programming_language_reader.findAllLanguage(tokens);
-    // console.log(allLanguages)
+    requiredLanguages = requiredLanguages.map(element => element.toLowerCase());
+
     const totalRequiredLanguages = requiredLanguages.length;
     let matchedLanguages = 0;
     requiredLanguages.forEach(element => {
@@ -18,7 +19,16 @@ async function getExprienceEvaluationValue(tokens, requiredLanguages, requiredTy
 
     if (matchedLanguages == totalRequiredLanguages) return 5;
     else {
-        languages = getAllRequiredTypeLanguage(requiredType);
+        let languages = await getAllRequiredTypeLanguage(requiredType);
+        languages = languages.map(element => element.toLowerCase());
+        let x = 0;
+        allLanguages.forEach(element => {
+            if (languages.includes(element)) x++;
+        });
+
+        let temp = (matchedLanguages/totalRequiredLanguages + 0.4*x/languages.length)*5
+        if(temp>5) return 5;
+        else return temp;
     }
 }
 
@@ -54,10 +64,6 @@ async function abc() {
     const pdfPath = 'Profile_38.pdf';
     const fileBuffer = await fs.readFileSync(pdfPath);
     let filteredTokens = await getTokens(fileBuffer);
-    // console.log(filteredTokens)
-    // let allLanguages = await findAllLanguage(filteredTokens);
-    // console.log(allLanguages)
-    console.log(await getExprienceEvaluationValue(filteredTokens, ['C#, net, angular'], 'Backend Development'))
-    // getAllRequiredTypeLanguage('Backend Development')
+    console.log(await getExprienceEvaluationValue(filteredTokens, ['C++', 'C'], 'Full Stack Development'))
 }
 abc()
