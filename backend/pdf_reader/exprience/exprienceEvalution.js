@@ -3,7 +3,7 @@ const path = require('path');
 const allPositionNames = require('./allPositionNames.js')
 
 
-function readAllCompanyName() {
+async function readAllCompanyName() {
     const filePath = path.join(__dirname, 'allCompanies.txt');
     const fileContent = fs.readFileSync(filePath, 'utf-8');
 
@@ -19,10 +19,9 @@ function readAllCompanyName() {
     return modifiedTwoDArray;
 }
 
-function readAllCompanysRating() {
+async function readAllCompanysRating() {
     const filePath = path.join(__dirname, 'allCompanies.txt'); // Use path.join to construct the file path
     const fileContent = fs.readFileSync(filePath, 'utf-8');
-
     const lines = fileContent.split('\n').filter(line => line.trim() !== '');
     const linesInLowerCase = lines.map(line => line.toLowerCase().trim());
     const resultArray = linesInLowerCase.map(line => {
@@ -34,40 +33,48 @@ function readAllCompanysRating() {
     });
     return resultArray;
 }
-function findAllCompanys(tokens, allCompaniesName) {
+async function findAllCompanys(tokens, allCompaniesName) {
     const allCompanies = [];
-
     let tokenStart = 0, tokenEnd = tokens.length;
-    let start = 0, end = allCompaniesName.length;
+    let start = 0, end = allCompaniesName.lengtsh;
+    
     while (tokenStart < tokenEnd) {
         start = 0;
+        console.log(allCompaniesName);
         while (start < end) {
+            
             if (tokens[tokenStart] == allCompaniesName[start][0]) {
-                let flag = true, l = allCompaniesName[start].length;
+                console.log("hihi",start,allCompaniesName[0][0]);
+                console.log(allCompaniesName[start][0]);
+                let flag = true;
+                let l = allCompaniesName[start].length;
+
                 for (let i = 0; i < l; i++) {
-                    if (allCompaniesName[start][i] != tokens[tokenStart]) {
+                    // Compare using indices
+                    if (allCompaniesName[start][i] != tokens[tokenStart + i]) {
                         flag = false;
                         break;
                     }
-                    else {
-                        tokenStart++;
-                    }
                 }
+
                 if (flag) {
                     allCompanies.push([tokenStart, allCompaniesName[start].join(' ')]);
+                    tokenStart += l;  // Move tokenStart to the end of the found company name
                     break;
                 }
-                tokenStart--;
             }
             start++;
         }
-        tokenStart++
+        
+        tokenStart++;
     }
+    console.log(allCompanies);
     return allCompanies;
 }
 
-function getAllPositionInCompanys(tokens, companyNames) {
+async function getAllPositionInCompanys(tokens, companyNames) {
     const allPositions = allPositionNames.readAllPositionName();
+    // console.log(companyNames);
     const companyWithPosition = [];
 
     for (let i = 0, l = companyNames.length; i < l; i++) {
@@ -103,7 +110,6 @@ async function getExprienceEvalutionValue(tokens) {
                 break;
             }
         }
-
         if (companyWithPosition[i][1].length > 0) {
             for (let a = 0, b = companyWithPosition[i][1].length; a < b; a++) {
                 for (let ii = 0, ll = positionGroups.length; ii < ll; ii++) {
@@ -118,14 +124,14 @@ async function getExprienceEvalutionValue(tokens) {
             allEvalutionValue.push(companiesRating * (1 + 3))
         }
     }
-    // console.log(allEvalutionValue)
+    console.log(allEvalutionValue)
     // Sort the array in descending order
     const sortedEvalutionValue = allEvalutionValue.sort((a, b) => b - a);
 
     // Take the first three elements
     const topThreeValues = sortedEvalutionValue.slice(0, 3);
     let average = topThreeValues.reduce((sum, value) => sum + value, 0) / topThreeValues.length;
-
+    console.log(average);
     if(average > 20) average = 5;
     else average = average*5/20;
 
