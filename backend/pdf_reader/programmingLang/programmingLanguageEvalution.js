@@ -1,8 +1,25 @@
+const fs = require('fs');
 const programming_language_reader = require("./programming_language_reader.js")
 
-function getExprienceEvaluationValue(tokens, requiredLanguages, requiredType){
-    const allLanguages = programming_language_reader.findAllLanguage(tokens);
-    console.log(allLanguages)
+async function getAllRequiredTypeLanguage(requiredType) {
+    const jsonData = JSON.parse(fs.readFileSync('groupOfLanguage.json', 'utf-8'));
+    const languages = jsonData[requiredType];
+    return languages;
+}
+
+async function getExprienceEvaluationValue(tokens, requiredLanguages, requiredType) {
+    const allLanguages = await programming_language_reader.findAllLanguage(tokens);
+    // console.log(allLanguages)
+    const totalRequiredLanguages = requiredLanguages.length;
+    let matchedLanguages = 0;
+    requiredLanguages.forEach(element => {
+        if (allLanguages.includes(element)) matchedLanguages++;
+    });
+
+    if (matchedLanguages == totalRequiredLanguages) return 5;
+    else {
+        languages = getAllRequiredTypeLanguage(requiredType);
+    }
 }
 
 
@@ -13,7 +30,6 @@ function getExprienceEvaluationValue(tokens, requiredLanguages, requiredType){
 
 const pdf = require('pdf-parse');
 const natural = require('natural');
-const fs = require('fs');
 
 async function getTokens(fileBuffer) {
     try {
@@ -41,6 +57,7 @@ async function abc() {
     // console.log(filteredTokens)
     // let allLanguages = await findAllLanguage(filteredTokens);
     // console.log(allLanguages)
-    console.log(getExprienceEvaluationValue(filteredTokens))
+    console.log(await getExprienceEvaluationValue(filteredTokens, ['C#, net, angular'], 'Backend Development'))
+    // getAllRequiredTypeLanguage('Backend Development')
 }
 abc()

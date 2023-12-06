@@ -1,0 +1,132 @@
+{
+    "Backend Development": [
+        "Express",
+        "ExpressJS",
+        "Koa",
+        "Hapi",
+        "HapiJS",
+        "Spring",
+        "Hibernate",
+        "Django",
+        "Flask",
+        "FastAPI",
+        "Laravel",
+        "Symfony",
+        "Lumen",
+        "ASP.NET",
+        ".NET",
+        "NET",
+        "Gin",
+        "Beego",
+        "Docker",
+        "mongodb",
+        "nginx",
+        "fullstack"
+    ],
+    "Frontend Development (UI)": [
+        "ReactJS",
+        "React",
+        "nginx",
+        "Vue",
+        "VueJS",
+        "Angular",
+        "Bootstrap",
+        "Dart",
+        "Flutter",
+        "Swift",
+        "SwiftUI",
+        "UIKit",
+        "Kotlin",
+        "jQuery",
+        "Docker",
+        "fullstack"
+    ],
+    "Mobile App Development": [
+        "ReactNative",
+        "Dart",
+        "Flutter",
+        "Kotlin",
+        "Swift",
+        "SwiftUI",
+        "UIKit"
+    ],
+    "Game Development": [
+        "C++",
+        "C#",
+        "Unity"
+    ],
+    "Data Science and Machine Learning": [
+        "Python",
+        "TensorFlow",
+        "PyTorch",
+        "R",
+        "Shiny"
+    ],
+    "Web Assembly (Wasm) Development": [
+        "Rust",
+        "Yew"
+    ],
+    "Full Stack Development": [
+        "JavaScript",
+        "nginx",
+        "Node",
+        "NodeJS",
+        "ExpressJS",
+        "Express",
+        "Meteor",
+        "Python",
+        "Django",
+        "Flask",
+        "Java",
+        "Spring",
+        "Play",
+        "PHP",
+        "Laravel",
+        "Ruby",
+        "C#",
+        "ASPNET",
+        "ASP",
+        "NET",
+        "Go",
+        "Gin",
+        "Beego",
+        "Docker",
+        "mongodb",
+        "fullstack"
+    ],
+    "Automation and Scripting": [
+        "Python",
+        "Selenium",
+        "Flask-RESTful",
+        "JavaScript",
+        "NodeJS",
+        "Node",
+        "Puppeteer",
+        "ShellScripting",
+        "Bash",
+        "PowerShell"
+    ],
+    "Object-Oriented Programming": [
+        "Java",
+        "C++",
+        "Python",
+        "Ruby",
+        "C#"
+    ],
+    "Educational and Learning": [
+        "Scratch",
+        "Python",
+        "Java"
+    ],
+    "Testing": [
+        "Jasmine",
+        "Mocha",
+        "Jest",
+        "Pytest",
+        "Selenium",
+        "JUnit",
+        "TestNG",
+        "RSpec",
+        "NUnit"
+    ]
+}
