@@ -171,28 +171,6 @@ const HomePage = () => {
 		setUploading(false);
 	};
 
-
-	// const handleSubmit = () => {
-	// 	if (selectedLanguages.length > 0 && fields.length > 0 && maxCandidates !== '') {
-	// 		fetch('http://localhost:9000/api/form', {
-	// 			method: 'POST',
-	// 			headers: {
-	// 				'Content-Type': 'application/json',
-	// 			},
-	// 			body: JSON.stringify({ fields, selectedLanguages, maxCandidates }),
-	// 		})
-	// 			.then(response => response.json())
-	// 			.then(data => {
-	// 				console.log('Response from backend:', data);
-	// 			})
-	// 			.catch(error => {
-	// 				console.error('Error:', error);
-	// 			});
-	// 	} else {
-	// 		console.error('No option selected');
-	// 		alert('Please select an option');
-	// 	}
-	// };
 	return (
 		<div className='homepage'>
 			<div className='homepage__left'>
@@ -227,27 +205,6 @@ const HomePage = () => {
 							Upload
 						</div>
 					</div>
-					{modalOpen && (
-						<div className='modal'>
-							<h3>Total Rating</h3>
-							<table>
-								<thead>
-									<tr>
-										<th>File Name</th>
-										<th>Rating</th>
-									</tr>
-								</thead>
-								<tbody>
-									{filesRating.map((file) => (
-										<tr key={file.fileName}>
-											<td>{file.fileName}</td>
-											<td>{file.rating}</td>
-										</tr>
-									))}
-								</tbody>
-							</table>
-						</div>
-					)}
 				</div>
 			</div>
 			<div className='homepage__right'>
@@ -303,6 +260,27 @@ const HomePage = () => {
 					</div>
 				</div>
 			</div>
+      {modalOpen && (
+						<div className='modal'>
+							<h3>Total Rating</h3>
+							<table>
+								<thead>
+									<tr>
+										<th>File Name</th>
+										<th>Rating</th>
+									</tr>
+								</thead>
+								<tbody>
+									{filesRating.map((file) => (
+										<tr key={file.fileName}>
+											<td>{file.fileName}</td>
+											<td>{file.rating}</td>
+										</tr>
+									))}
+								</tbody>
+							</table>
+						</div>
+					)}
 		</div>
 	);
 };
