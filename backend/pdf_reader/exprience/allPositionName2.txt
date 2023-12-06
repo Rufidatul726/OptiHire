@@ -1,0 +1,23 @@
+###Low Level###
+Intern
+Trainee
+
+###Mid-Low Level###
+Associate
+Junior
+Office Secretary
+Vice Chair
+Backend
+Frontend
+Instructor
+Writer
+Remote
+
+###Moderate Level###
+Senior
+Vice President
+
+###High Level###
+Fullstack
+Full stack
+President
