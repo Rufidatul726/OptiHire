@@ -1,92 +1,90 @@
-Enosis Solutions
-Datasoft Systems Bangladesh Limited
-Brain Station 23
-Cefalo Bangladesh Ltd.
-Cefalo
-Apploye HQ
-Daffodil Software Limited
-Pridesys IT Ltd.
-SELISE Digital Platforms
-Dream71 Bangladesh Ltd.
-Southtech Limited
-Kaz Software
-LeadSoft Bangladesh Limited
-Nascenia
-TigerIT Bangladesh Ltd.
-Soft BD Ltd.
-Riseup Labs
-BJIT
-BJIT Limited
-Workspace InfoTech Limited
-Empower Software Solutions
-HRSOFT
-Datazo InfoTech
-Riseup Labs
-Zaag Systems
-Flyte Solutions
-Extreme Solutions
-Extreme Security & Solution
-LEADS Corporation Limited
-IIT Software Engineers' Community
-Samsung Electronics
-Orion Informatics Ltd
-mPower Social Enterprises Ltd.
-Cloud Production Ltd
-Ding
-REVE Systems
-Royal Capital Ltd.
-Genuity Systems Ltd.
-Streams Tech Ltd.
-Fiverr
-Last Man Stands
-Orion Informatics Ltd
-Samsung R&D Institute Bangladesh
-Code Maze
-Workd
-Leveor
-Devolved AI
-Tero Labs
-Toptal
-Emali Limited
-Mindcraft Labs
-Hong Kong Blockchain Society
-Vrije Universiteit Amsterdam
-Commlink Info Tech Ltd.
-United Finance
-Kinetik
-HeavyTask
-Qatar University Machine Learning Group
-DocSpace
-Shohoz
-SELISE
-Loence Solution
-Seminal
-Pikcha
-PelicanCorp
-Ice Breakers Software Studio
-Panacea Systems Ltd
-Loence Solution
-Gas Transmission Company Limited
-Jalalabad Gas Transmission and Distribution System Ltd
-MCC Ltd Bangladesh
-VFS Global
-Brainery e-Learning
-Microsoft Excel
-BD Crowd Ltd
-BD Tax Care (BTC)
-Turing
-Apploye
-GEOTAB
-Skylandweb
-FarhanasBrainstation
-Farhanas Brainstation
-BASIS Institute of Technology & Management (BITM)
-Tareq's Catering & Event Management 
-DNA Solution Ltd
-Praava Health
-Bridge Chemie Limited
-Shahjalal Islami Bank Limited
-NCC Bank
-RUPLAI BANK
-United Finance
-Sonali Bank
+Enosis Solutions 5
+Datasoft Systems Bangladesh Limited 5
+Brain Station 23 5
+Cefalo Bangladesh Ltd. 5
+Cefalo 5
+Apploye HQ 3
+Daffodil Software Limited  5
+Pridesys IT Ltd. 5
+SELISE Digital Platforms 5
+Dream71 Bangladesh Ltd. 5
+Southtech Limited 5
+Kaz Software 5
+LeadSoft Bangladesh Limited 4.8
+Nascenia 4.7
+TigerIT Bangladesh Ltd. 5
+Soft BD Ltd. 4.2
+Riseup Labs 4.7
+BJIT 3.8
+BJIT Limited 3.8
+Workspace InfoTech Limited 4.5
+Empower Software Solutions 3.5
+HRSOFT 5
+Datazo InfoTech 0.3
+Riseup Labs 4.8
+Zaag Systems 3.5
+Flyte Solutions 2.9
+Extreme Solutions 0.4
+Extreme Security & Solution 0.3
+LEADS Corporation Limited 5
+IIT Software Engineers' Community 2
+Samsung Electronics 5
+Orion Informatics Ltd 4.4
+mPower Social Enterprises Ltd. 4.6
+Cloud Production Ltd 2.2
+Ding 5
+REVE Systems 4.5
+Royal Capital Ltd. 4.6
+Genuity Systems Ltd. 5
+Streams Tech Ltd. 4.6
+Fiverr 3.5
+Last Man Stands 2.1
+Samsung R&D Institute Bangladesh 5
+Code Maze 1.2
+Workd 4.4
+Leveor 5
+Devolved AI 0.7
+Tero Labs 0.5
+Toptal 4.6
+Emali Limited 0.3
+Mindcraft Labs 1.6
+Hong Kong Blockchain Society 4.2
+Vrije Universiteit Amsterdam 4.6
+Commlink Info Tech Ltd. 2.3
+Kinetik 0.3
+HeavyTask 0.2
+Qatar University Machine Learning Group 0.3
+DocSpace 2.3
+Shohoz 4.4
+Selise Rockin Software 5
+Seminal 0.2
+Pikcha 0.2
+PelicanCorp 0.1
+Ice Breakers Software Studio 0.2
+Panacea Systems Ltd 3.3
+Loence Solution 0.3
+Gas Transmission Company Limited 5
+Jalalabad Gas Transmission and Distribution System Ltd 0.1
+MCC Ltd Bangladesh 5
+VFS Global 5
+Brainery e-Learning 3.5
+Microsoft Excel 5
+BD Crowd Ltd 0.3
+BD Tax Care (BTC) 0.3
+Turing 5
+Apploye 0.3
+GEOTAB 3.1
+Gigabit 4.1
+Skylandweb 0.4
+FarhanasBrainstation 2.5
+Farhanas Brainstation 2.5
+BASIS Institute of Technology & Management (BITM) 5
+Tareq's Catering & Event Management 0.3 
+DNA Solution Ltd 4.2
+Praava Health 5
+Bridge Chemie Limited 3.6
+Shahjalal Islami Bank Limited 4.3
+NCC Bank 4.5
+RUPLAI BANK 4.6
+United Finance 4.8
+Sonali Bank 4.5
