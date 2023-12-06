@@ -5,9 +5,13 @@ import '../styles/UploadPDF.css';
 import '../styles/PopupStyle.css'; // Create a separate CSS file for styling
 // import UploadPDF from '../components/UploadPDF';
 import '../styles/Homepage.css';
+// import dotenv from 'dotenv';
+// dotenv.config();
+
 // import TransitionsModal from './Modal';
 
 const HomePage = () => {
+	const backendUrl = process.env.BACKEND_URL || 'http://localhost:9000/upload';
 	const [pdfFiles, setPdfFiles] = useState([]);
 	const [pdfFile, setPdfFile] = useState(null);
 	const [uploading, setUploading] = useState(false);
@@ -134,7 +138,7 @@ const HomePage = () => {
 			formData.append('maxCandidates', maxCandidates);
 
 			try {
-				const response = await fetch('http://localhost:9000/upload', {
+				const response = await fetch(backendUrl, {
 					method: 'POST',
 					body: formData,
 				});
@@ -162,7 +166,7 @@ const HomePage = () => {
 			singleFileFormData.append('maxCandidates', maxCandidates);
 
 			try {
-				const response = await fetch('http://localhost:9000/upload', {
+				const response = await fetch(backendUrl, {
 					method: 'POST',
 					body: singleFileFormData,
 				});

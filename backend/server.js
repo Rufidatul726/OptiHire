@@ -62,6 +62,10 @@ app.post('/upload', upload.single('pdf'), async (req, res) => {
   }
 });
 
+app.post('/test',  async (req, res) => {
+  res.status(200).json({ Message:  "successfull"});
+});
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
