@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 // import Form from '../components/Form';
 import '../styles/Form.css';
 import '../styles/UploadPDF.css';
+import '../styles/PopupStyle.css'; // Create a separate CSS file for styling
 // import UploadPDF from '../components/UploadPDF';
 import '../styles/Homepage.css';
 // import TransitionsModal from './Modal';
@@ -12,10 +13,11 @@ const HomePage = () => {
 	const [uploading, setUploading] = useState(false);
 	const [modalOpen, setModalOpen] = useState(false);
 	const [filesRating, setFilesRating] = useState([]);
+	const [topfiles, setTopfiles] = useState(null);
 	const [selectedfield, setSelectedfield] = useState('');
 	const [fields, setFields] = useState([]);
 	const [selectedLanguages, setSelectedLanguages] = useState([]);
-	const [maxCandidates, setMaxCandidates] = useState('');
+	const [maxCandidates, setMaxCandidates] = useState(10);
 	const [languages, setLanguages] = useState([
 		{ id: 1, name: 'JavaScript' },
 		{ id: 2, name: 'Python' },
@@ -41,6 +43,16 @@ const HomePage = () => {
 		{ id: 22, name: 'Groovy' },
 		{ id: 23, name: 'Objective-C' },
 	]);
+	const [isPopupOpen, setPopupOpen] = useState(false);
+
+
+    const openPopup = () => {
+        setPopupOpen(true);
+    };
+
+    const closePopup = () => {
+        setPopupOpen(false);
+    };
 
 	const handleFolderSelect = () => {
 		const folderInput = document.getElementById('folderInput');
@@ -102,6 +114,7 @@ const HomePage = () => {
 	}, []);
 
 
+
 	const handleUpload = async () => {
 		if (pdfFiles.length === 0 && !pdfFile) {
 			return;
@@ -139,6 +152,7 @@ const HomePage = () => {
 			}
 		}
 
+
 		// Append the single file
 		if (pdfFile) {
 			const singleFileFormData = new FormData();
@@ -169,6 +183,9 @@ const HomePage = () => {
 		setFilesRating(newFilesRating);
 		setModalOpen(true);
 		setUploading(false);
+		const sortedFiles = newFilesRating.sort((a, b) => b.rating - a.rating).slice(0, maxCandidates);
+		setTopfiles(sortedFiles);
+		setPopupOpen(true)
 	};
 
 	return (
@@ -260,27 +277,37 @@ const HomePage = () => {
 					</div>
 				</div>
 			</div>
-      {modalOpen && (
-						<div className='modal'>
-							<h3>Total Rating</h3>
-							<table>
-								<thead>
-									<tr>
-										<th>File Name</th>
-										<th>Rating</th>
-									</tr>
-								</thead>
-								<tbody>
-									{filesRating.map((file) => (
-										<tr key={file.fileName}>
-											<td>{file.fileName}</td>
-											<td>{file.rating}</td>
+			{topfiles && (
+				<div>
+					{isPopupOpen && (
+						<div className="custom-popup-overlay">
+							<div className="custom-popup">
+								<span className="close-icon" onClick={closePopup}>
+									&times;
+								</span>
+
+								<h3>Total Rating</h3>
+								<table>
+									<thead>
+										<tr>
+											<th>File Name</th>
+											<th>Rating</th>
 										</tr>
-									))}
-								</tbody>
-							</table>
+									</thead>
+									<tbody>
+										{topfiles.map((file) => (
+											<tr key={file.fileName}>
+												<td>{file.fileName}</td>
+												<td>{file.rating}</td>
+											</tr>
+										))}
+									</tbody>
+								</table>
+							</div>
 						</div>
 					)}
+				</div>
+			)}
 		</div>
 	);
 };
