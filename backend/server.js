@@ -10,6 +10,7 @@ const port = 9000;
 // const url = "mongodb+srv://classproject:classproject@optihire.hew1xqe.mongodb.net/?retryWrites=true&w=majority";
 const storage = multer.memoryStorage();
 const upload = multer({ storage: storage });
+const { getExprienceEvalutionValue } = require('./pdf_reader/exprience/exprienceEvalution');
 
 app.use(express.json());
 app.use(cors());
@@ -41,8 +42,8 @@ app.post('/upload', upload.single('pdf'), async (req, res) => {
 
     const buffer = req.file.buffer;
     const tokens = getTokens(buffer);
-    let expEva = await getExprienceEvalutionValue(filteredTokens);
-    
+    let expEva = await getExprienceEvalutionValue(tokens);
+    console.log(expEva);
     
     // getInformationFromPDF(buffer);
     // const data = await pdf(buffer);
@@ -75,7 +76,11 @@ app.post('/upload', upload.single('pdf'), async (req, res) => {
 });
 
 app.post('/api/form', (req, res) => {
-  console.log(req.body);
+  // console.log(req.body);
+  const fields= req.body.fields;
+  const languages= req.body.selectedLanguages;
+  const candidateNo= req.body.maxCandidates;
+  console.log(fields[0], languages, candidateNo);
   res.json({ message: 'Data received!' });
 });
 

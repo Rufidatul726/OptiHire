@@ -1,9 +1,10 @@
 const fs = require('fs');
+const path = require('path');
 const allPositionNames = require('./allPositionNames.js')
 
 
 function readAllCompanyName() {
-    const filePath = 'allCompanies.txt';
+    const filePath = path.join(__dirname, 'allCompanies.txt');
     const fileContent = fs.readFileSync(filePath, 'utf-8');
 
     // Split the content into an array based on line breaks
@@ -139,36 +140,36 @@ async function getExprienceEvalutionValue(tokens) {
 
 
 
-const pdf = require('pdf-parse');
-const natural = require('natural');
-async function getTokens(fileBuffer) {
-    try {
-        const data = await pdf(fileBuffer);
-        let textContent = data.text;
-        textContent = textContent.replace(/-/g, '');
-        textContent = textContent.replace(/\./g, '');
-        const stopwords = natural.stopwords;
+// const pdf = require('pdf-parse');
+// const natural = require('natural');
+// async function getTokens(fileBuffer) {
+//     try {
+//         const data = await pdf(fileBuffer);
+//         let textContent = data.text;
+//         textContent = textContent.replace(/-/g, '');
+//         textContent = textContent.replace(/\./g, '');
+//         const stopwords = natural.stopwords;
 
-        const customTokenizer = /\b[A-Za-z]\+ |\b[A-Za-z]\+\+|\b[A-Za-z]#|\b\w+\b/g;
-        let tokens = textContent.match(customTokenizer);
-        const filteredTokens = tokens.filter(token => !stopwords.includes(token.toLowerCase()));
-        const lowercaseTokens = filteredTokens.map(token => token.toLowerCase());
-        return lowercaseTokens;
-    }
-    catch (error) {
-        console.error('Error reading PDF:', error);
-    }
-}
+//         const customTokenizer = /\b[A-Za-z]\+ |\b[A-Za-z]\+\+|\b[A-Za-z]#|\b\w+\b/g;
+//         let tokens = textContent.match(customTokenizer);
+//         const filteredTokens = tokens.filter(token => !stopwords.includes(token.toLowerCase()));
+//         const lowercaseTokens = filteredTokens.map(token => token.toLowerCase());
+//         return lowercaseTokens;
+//     }
+//     catch (error) {
+//         console.error('Error reading PDF:', error);
+//     }
+// }
 
-async function abc() {
-    const pdfPath = 'Profile_28.pdf';
-    const fileBuffer = await fs.readFileSync(pdfPath);
-    let filteredTokens = await getTokens(fileBuffer);
-    let expEva = await getExprienceEvalutionValue(filteredTokens);
-    console.log(expEva)
-}
+// async function abc() {
+//     const pdfPath = 'Profile_28.pdf';
+//     const fileBuffer = await fs.readFileSync(pdfPath);
+//     let filteredTokens = await getTokens(fileBuffer);
+//     let expEva = await getExprienceEvalutionValue(filteredTokens);
+//     console.log(expEva)
+// }
 
-abc()
+// abc()
 
 module.exports = {
     getExprienceEvalutionValue
